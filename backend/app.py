@@ -21,7 +21,6 @@ app.config['MYSQL_DATABASE_PASSWORD'] = "123"
 app.config['MYSQL_DATABASE_DB'] = "deid"
 app.config['MYSQL_DATABASE_USER'] = "raife"
 project_db = "deid"
-#token = "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"
 app.config['MYSQL_DATABASE_PORT'] = 3306
 mysql = MySQL()
 mysql.init_app(app) 

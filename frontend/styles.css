@@ -1,0 +1,276 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #333;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    top: 0;
+    z-index: 999; /* Header'ın diğer içeriklerin üstünde olmasını sağlar */
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 10;
+    padding: 10;
+    text-align: right;
+  }
+  
+  nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.2s;
+    text-transform: uppercase;
+  }
+  nav ul li a:hover {
+
+    transition: 0.2s;
+    color: aqua;
+  }
+
+  section {
+    margin: auto;
+    padding: 20px 50px;
+    text-align: center;
+  }
+  
+  section:nth-child(even) {
+    background-color: #f9f9f9; /* Alternatif renklendirme */
+  }
+  .headings {
+    text-align: center;
+  }
+  .paragraph {
+    text-align: justify;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Box shadow eklemek için */
+    padding: 7px 7px 7px 7px;
+
+  }
+
+
+  .circle-image {
+    width: 600px; /* Görüntünün genişliği */
+    height: 300px; /* Görüntünün yüksekliği */
+    overflow: hidden; /* İçeriğin taşmasını önlemek için */
+    border-radius: 10%; /* Border'ın yarıçapını %50 yaparak daire şeklinde yapar */
+    display: flex; /* İçeriği yatayda hizalamak için flex kullan */
+    justify-content: center; /* İçeriği yatayda ortala */
+    align-items: center; /* İçeriği dikeyde ortala */
+    margin: 0 auto; /* Yatayda ortalamak için sol ve sağ kenar boşluklarını otomatik olarak ayarlar */
+    transition: transform 0.3s ease; /* Geçiş efekti için */
+
+  }
+
+  
+.circle-image:hover {
+    transform: scale(1.2); /* Hover edildiğinde boyutu büyüten dönüşüm */
+}
+  
+  .circle-image img {
+    width: 100%; /* Resmin genişliğini dairesel div'in genişliğine eşitler */
+    height: auto; /* Otomatik yükseklik ayarı */
+    display: block; /* Resmi blok seviyesine getirerek uygun şekilde yerleştirir */
+ }
+
+ .photo-div {
+    background-color: #FFDEE9;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+    margin-top: 60px; /* Header'ın altında başlaması için */
+    height: 400px;
+    padding: 30px;
+    text-align: center; /* İçeriği yatayda ortalamak için */
+
+
+ }
+
+ .caption {
+    color: rgb(206, 18, 235);
+    font-size: 24px;
+    font-family: sans-serif;
+    padding-top: 20px;
+}
+
+  /* Form container styling */
+  .form-container {
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: row;
+  }
+
+/* Input field styling */
+textarea[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensures padding is included in the width */
+  font-size: 16px;
+  color: #333;
+  text-align: start;
+}
+
+/* Button container styling */
+.button-container {
+  margin-top: 10px; /* Boşluk eklemek için */
+  margin-left: 25%;
+}
+
+/* Button styling */
+button[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff; /* Change to desired color */
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: lightblue; /* Darker shade on hover */
+}
+
+/* Label styling */
+label {
+  font-size: 16px;
+  font-weight: bold;
+}
+#textForm {
+  width: 100%;
+  height: 600px;
+  text-align: justify;
+}
+
+#inputText {
+  width: 80%;
+  height:500px;
+  text-align: justify;
+}
+#outputText {
+  width: 80%;
+  height:500px;
+  text-align: justify;
+}
+#contact-me {
+    width: 100%;
+    height: auto;
+    padding: 20px 5px 20px 5px;
+    text-align: center;
+    background-color: #FFDEE9;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+    color: rgb(206, 18, 235);
+  }
+  #contact-me p {
+    margin-bottom: 50px;
+
+  }
+
+
+  .contact-form {
+    max-width: 800px;
+    display: flex;
+    text-align: left;
+    max-width: 1100px;
+    margin: 0 auto;
+    color: rgb(206, 18, 235);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+  }
+  
+  
+  .contact-form label {
+    display: block;
+    margin-bottom: 9px;
+
+  }
+  .message {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+
+  
+  .message textarea {
+    border-radius: 5px;
+    border: 0px;
+  }
+  
+
+.contact-details {
+    flex: 1;
+    margin-right: 50px;
+
+}
+
+.contact-details input {
+    width: 200px;
+    border-radius: 5px;
+    border: 0px;
+    padding: 15px 20px;
+    margin-bottom: 20px ;
+}
+
+.message button {
+    background-color:  lightblue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: auto;
+    margin-top: 40px;
+    cursor: pointer;
+
+}
+
+
+  
+  .message button:hover {
+    background-color:  #0056b3;
+  }
+  
+  footer {
+    width: 100%;
+    margin-right: 0px;
+    margin: 0 auto; /* İçeriği yatayda ortala */
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  .footer-container {
+    width: 100%;
+    margin: 0 ;
+    margin-right: -10px;
+  }
+  
+  .social-links {
+    text-align: right;
+  }
+
+  .social-links a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+  }
+  
+  .social-links a:hover {
+    color: #007bff;
+  }
+  
+  

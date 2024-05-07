@@ -1,0 +1,1 @@
+{"label": "ACCOUNT", "regex": "[C]?[H]?\\d{2}[ ]\\d{4}[ ]?\\d{4}[ ]?\\d{4}[ ]?\\d{4}[ ]?\\d{1}|[C]?[H]?\\d{19}", "prefix": ["IBAN", "bankkonto", "konto"], "suffix": [], "contextLength": 20}

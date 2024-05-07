@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+    deid_db:
+        image: mysql:5.7
+        container_name: deid_db
+        ports:
+            - "3306:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: Aa123
+            MYSQL_USER: 'raife'
+            MYSQL_PASSWORD: '123'
+            MYSQL_DATABASE: 'deid'
+        volumes:
+            - dbdata:/var/lib/mysql
+            # Directory with *sql files to initialize DB
+    backend-svc:
+        image: backend:dev
+        container_name: backend-svc
+        restart: always
+        ports: 
+            - 5000:5000
+        depends_on: 
+            - deid_db
+
+    frontend-svc:
+        image: frontend:dev
+        container_name: frontend-svc
+        ports: 
+            - 80:80
+
+
+volumes:
+    dbdata:

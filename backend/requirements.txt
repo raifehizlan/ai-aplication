@@ -1,0 +1,9 @@
+flask==2.3.3
+flask-mysql==1.5.2
+aimped==0.1.54
+transformers==4.26.1
+nltk==3.7
+urllib3<2
+torch==2.0.1
+pydantic==1.8.2
+flask-cors==4.0.1

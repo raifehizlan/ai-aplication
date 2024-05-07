@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NLP Projects</title>
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="normalize.css">
+
+<script src="https://kit.fontawesome.com/e5228483ac.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <ul>
+      <li><a href="#about-project">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact-me">Contact Me</a></li>
+    </ul>
+  </nav>
+</header>
+<div class="photo-div">
+    <div class="circle-image">
+        <img src="baslik.png" >
+    </div>
+    <p class="caption">Say our latest application designed to classify NLP (Natural Language Processing) models such as NER (Named Entity Recognition) and more!</p> <!-- Metni .photo-div içine taşıdık -->
+</div>
+<section id="about-project">
+  <div class="paragraph">
+    <h2 class="headings">About Project</h2>
+
+    <p>Named Entity Recognition (NER) is a significant technique in the field of Natural Language Processing (NLP). This technique is used to identify specific entity types (such as names, locations, dates, organizations, etc.) within texts.</p>
+    
+    <p> NER models utilize learning algorithms to identify and classify specific entity types within texts. This is widely used in many applications that involve understanding and processing text data, such as text analysis, information extraction, and automatic text summarization. Our application provides an enhanced tool for classifying NER and similar NLP models, enabling you to process and understand text data more effectively.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Project</h2>
+  <div class="form-container">
+  <form id="textForm">
+    <textarea id="inputText" name="inputText" rows="10" placeholder="Enter your Text" required="required"></textarea>
+
+    <div class="button-container">
+        <button type="submit">Predict</button>
+      </div>
+    </form>
+
+    <form id="textForm">
+        <textarea id="outputText" rows="10" placeholder="Output text will appear here" readonly></textarea>
+
+    </form>
+</div>
+
+<div id="result"></div>
+
+</section>
+
+<section id="contact-me">
+    <h2>Contact Me</h2>
+    <p>Use this form to get in touch. I would love to hear from you.</p>
+      <form  class="contact-form">
+          <div class="contact-details">
+            <label for="name">Name</label>
+            <input class="input" type="text" id="yourname" name="name" placeholder="Your name">
+
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" placeholder="Reason for your message" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your email address">
+          </div>
+
+          <div class="message">
+            <label for="message">Message</label>
+            <textarea id="message"  rows="15" required></textarea>
+            <button type="submit">Send</button>
+
+        </div>
+      </form>
+    </div>
+  </section>
+  
+  
+  <footer>
+    <div class="footer-container">
+      <div class="social-links">
+        <a href="https://github.com/raifehizlan" target="_blank"><i class="fa fa-github"></i></a>
+        <a href="https://medium.com/@raifehizlan" target="_blank"><i class="fa fa-medium"></i></a>
+        <a href="https://www.linkedin.com/in/raife-gulum-hizlan/" target="_blank"><i class="fa fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+  
+
+    <script>
+        // Form gönderildiğinde çağrılacak fonksiyon
+        document.getElementById('textForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Formun varsayılan davranışını engelle
+
+            var text = document.getElementById('inputText').value; // Kullanıcının girdiği metni al
+
+            fetch('http://localhost:5000/prediction', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded' // Form verisi olarak gönderildiğini belirtiyoruz
+                },
+                body: 'data=' + encodeURIComponent(text) // Veriyi form verisi olarak kodlayıp gönderiyoruz
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Gelen sonucu ekrana yazdır
+                document.getElementById('outputText').value = data.result;
+            })
+            .catch(error => console.error('Error:', error));
+        });
+    </script>
+</body>
+</html>

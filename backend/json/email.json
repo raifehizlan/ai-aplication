@@ -1,0 +1,1 @@
+{"label": "EMAIL", "regex": "(?=\\S+)\\w+@\\w+.[a-zA-Z]{2,3}(?=\\S*)", "prefix": [], "suffix": [], "contextLength": 25}

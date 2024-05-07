@@ -1,0 +1,1 @@
+{"label": "SSN", "regex": "\\S+\\d\\S+", "prefix": ["AVS", "NAS", "NSS","SÉCURITÉ SOCIALE", "Num SS"], "suffix": [], "contextLength": 20}
